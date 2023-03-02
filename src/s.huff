@@ -1,0 +1,35 @@
+// INTERFACE
+#define function search(uint256,uint256[]) nonpayable returns(uint256)
+
+// MACRO
+#define macro SEARCH() = takes(0) returns(0) {
+    0x64    returndatasize    mstore   // store the value of i at offset 0  
+    
+    start:
+        0x44 calldataload returndatasize eq rev jumpi
+        returndatasize mload calldataload 0x04 calldataload eq ans jumpi     // i'th entry equals to num or not then out
+        returndatasize mload 0x44 calldataload push1 0x20 mul push1 0x44 add eq rev jumpi           // is i==length of the list then revert statement
+        returndatasize mload 0x20 add returndatasize mstore pc start jumpi      // increment of the value of i to get the new offset for next iteration
+    ans:
+        0x20 0x60 returndatasize mload sub div    // (i - 60)/20 = the real index of the entry 
+        returndatasize mstore                     // stored the value of the index in the memory
+        0x20    returndatasize                    
+        return                          // return the index value from the memory
+    
+    rev:
+        0xff returndatasize                       // this is the message to save in the memory
+        mstore                          
+        0x20 returndatasize
+        return                          // return the message
+}
+
+// main function 
+#define macro MAIN() = takes(0) returns(0) {
+    returndatasize    calldataload    0xE0    shr
+
+    __FUNC_SIG(search) eq search jumpi
+
+
+    search:
+        SEARCH()
+}
