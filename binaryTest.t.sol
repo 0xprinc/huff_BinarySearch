@@ -4,7 +4,7 @@ pragma solidity ^0.8.15;
 import "foundry-huff/HuffDeployer.sol";
 import "forge-std/Test.sol";
 
-contract bintest is Test {
+contract binaryTest is Test {
     /// @dev Address of the InsertionSort contract.
     bin public b;
 
