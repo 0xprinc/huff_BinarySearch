@@ -1,6 +1,4 @@
-# INTRO
-Binary Search is a very common algorithm to search for an element in a sorted array in a very efficient way.
-It takes O(log(n)) time to calculate the output
+This repository contains the implementation of binary search algorithm using assembly language for Ethereum blockchain. The binary search algorithm is used to search for a specific element in a sorted list or array in an efficient way.
 
 # huff 
 This huff code is the implementation of the Binary Search 
