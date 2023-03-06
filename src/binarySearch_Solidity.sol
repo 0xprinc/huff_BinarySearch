@@ -1,7 +1,7 @@
 pragma solidity ^0.8.16;
 
 contract first {
-    function bin(uint256 num, uint256[] memory l) public pure returns(uint){
+    function binary(uint256 num, uint256[] memory l) public pure returns(uint){
         uint i = 0;
         uint j = l.length - 1;
         uint mid = 0;
