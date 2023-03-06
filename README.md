@@ -1,10 +1,10 @@
 This repository contains the implementation of binary search algorithm written in HUFF for EVM chains.</br>
 Given a sorted array, the Binary Search Algorithm searches for a specific element in a sorted list or array in an efficient way. 
 
-pseudo-code for binary search is as follows:
-                // we are gonna use the two pointer for this algorithm 
-                // left pointer points the start of the array 
-                // right pointer  points the end of the array
+pseudo-code for binary search is as follows:</br>
+                // we are gonna use the two pointer for this algorithm </br>
+                // left pointer points the start of the array </br>
+                // right pointer  points the end of the array</br>
                 
                 while(left pointer <= right pointer){   
                 
