@@ -32,14 +32,16 @@ contract binaryTest is Test {
         assertEq(b.binary(5,arr),4);
         assertEq(b.binary(6,arr),5);
         if(x > 6){
-            assertEq(b.binary(x,arr),255);
+            expectRevert();
+            uint z = b.binary(x,arr);
         }
     }
 
     // fuzz testing on empty array
     function test_2(uint x) public {                    
         uint256[] memory arr = new uint256[](0);
-        assertEq(b.binary(x,arr),255);              
+        vm.expectRevert();
+        uint x = b.binary(x, arr);             
     }
 }
 
